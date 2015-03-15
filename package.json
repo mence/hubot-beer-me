@@ -1,19 +1,19 @@
 {
-  "name": "hubot-hubot-beer-me",
+  "name": "hubot-beer-me",
   "description": "Finds some sweet beers!",
-  "version": "0.0.0",
-  "author": "Dave <dpnonne@gmail.com>",
+  "version": "0.0.1",
+  "author": "Dave <dave@davenonne.com>",
   "license": "MIT",
 
   "keywords": ["hubot","hubot-scripts"],
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-hubot-beer-me.git"
+    "url": "git://github.com/davenonne/hubot-beer-me.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-hubot-beer-me/issues"
+    "url": "https://github.com/davenonne/hubot-beer-me/issues"
   },
 
   "dependencies": {
