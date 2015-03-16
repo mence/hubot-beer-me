@@ -21,12 +21,9 @@ module.exports = (robot) ->
       msg.send "Brewery DB API key not set (BREWERDB_KEY)!"
       return
     
-    msg.http(BREWERYDB_API_URL)
-      .query
-        key: process.env.BREWERYDB_API_KEY
-        q: msg.match[1].replace(" ", "+")
-        format: "json"
-      .get() (err, res, body) ->
+    query = { q: msg.match[1].replace(" ", "+"), key: process.env.BREWERYDB_API_KEY, format: "json" }
+    
+    msg.http(BREWERYDB_API_URL).query(query).get() (err, res, body) ->
           data = JSON.parse(body)['data']
           if data
             beer = data[0]
@@ -34,13 +31,5 @@ module.exports = (robot) ->
             msg.send "No beer found"
             return
             
-          response = beer['name']
-          if beer['breweries']?
-            response += " (#{beer['breweries'][0]['name']})"
-          if beer['style']?
-            response += "\n#{beer['style']['name']}"
-          if beer['abv']?
-            response += "\nABV: #{beer['abv']}%"
-          if beer['description']?
-            response += "\nDescription: #{beer['description']}"
+          response = data
           msg.send response
