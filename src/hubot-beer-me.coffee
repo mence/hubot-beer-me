@@ -24,13 +24,16 @@ module.exports = (robot) ->
     query = { q: msg.match[1].replace(" ", "+"), key: process.env.BREWERYDB_KEY, format: "json" }
     
     msg.http(BREWERYDB_API_URL).query(query).get() (err, res, body) ->
-      response = JSON.parse(body)['data']
-      console.log("%j", response)
+      data = JSON.parse(body)['data']
       
-      if response
-        beer = response[0]
+      if data
+        beer = data[0]
       else
         msg.send "Nothing found"
         return
-        
-      msg.send(beer['name'])
+      
+      response = "#{beer['name']}\n"
+      
+      response += "APV: #{beer['abv']}%\n"
+      
+      msg.send(response)
