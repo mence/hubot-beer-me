@@ -1,25 +1,23 @@
 {
   "name": "hubot-beer-me",
   "description": "Finds some sweet beers!",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Dave <dave@davenonne.com>",
   "license": "MIT",
-
-  "keywords": ["hubot","hubot-scripts"],
-
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/davenonne/hubot-beer-me.git"
   },
-
   "bugs": {
     "url": "https://github.com/davenonne/hubot-beer-me/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -30,9 +28,7 @@
     "matchdep": "~0.1.2",
     "grunt-contrib-watch": "~0.5.3"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
