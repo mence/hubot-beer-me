@@ -25,6 +25,5 @@ module.exports = (robot) ->
     
     msg.http(BREWERYDB_API_URL).query(query).get() (err, res, body) ->
       data = JSON.parse(body)
-            
-      response = data
-      msg.send response
+      console.log("%j", data)      
+      msg.send("%j", data)
