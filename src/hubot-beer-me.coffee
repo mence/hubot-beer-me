@@ -23,8 +23,7 @@ module.exports = (robot) ->
     
     msg.http(BREWERYDB_API_URL)
       .query
-        type: "beer"
-        withBreweries: "Y"
+        type: "search"
         key: process.env.BREWERYDB_API_KEY
         q: msg.match[1].replace(" ", "+")
       .get() (err, res, body) ->
