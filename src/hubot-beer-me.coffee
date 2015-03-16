@@ -33,13 +33,15 @@ module.exports = (robot) ->
         return
       
       response = "#{beer['name']}\n"
-      
-      response += "ABV: #{beer['abv']}%\n"
-      response += "Description: #{beer['description']}\n"
-      #Location
-      #Brewery
-      response += "Style: #{beer['style'][0]['name']}\n"
-      response += "Food Pairings: #{beer['foodPairings']}\n"
-      response += "Glass Style: #{beer['glass'][0]['name']}\n"
+      if beer['abv']?
+        response += "ABV: #{beer['abv']}%\n"
+      if beer['description']?
+        response += "Description: #{beer['description']}\n"
+      if beer['style']?
+        response += "Style: #{beer['style']['name']}\n"
+      if beer['foodPairings']?
+        response += "Food Pairings: #{beer['foodPairings']}\n"
+      if beer['glass']?
+        response += "Glass Style: #{beer['glass']['name']}\n"
       
       msg.send(response)
