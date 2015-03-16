@@ -23,9 +23,9 @@ module.exports = (robot) ->
     
     msg.http(BREWERYDB_API_URL)
       .query
-        type: "search"
         key: process.env.BREWERYDB_API_KEY
         q: msg.match[1].replace(" ", "+")
+        format: "json"
       .get() (err, res, body) ->
           data = JSON.parse(body)['data']
           if data
