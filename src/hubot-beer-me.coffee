@@ -21,9 +21,16 @@ module.exports = (robot) ->
       msg.send "Brewery DB API key not set (BREWERYDB_KEY)!"
       return
     
-    query = { q: msg.match[1].replace(" ", "+"), key: process.env.BREWERYDB_API_KEY, format: "json" }
+    query = { q: msg.match[1].replace(" ", "+"), key: process.env.BREWERYDB_KEY, format: "json" }
     
     msg.http(BREWERYDB_API_URL).query(query).get() (err, res, body) ->
-      data = JSON.parse(body)
-      console.log("%j", data)      
-      msg.send("%j", data)
+      response = JSON.parse(body)['data']
+      console.log("%j", response)
+      
+      if response
+        beer = response[0]
+      else
+        msg.send "Nothing found"
+        return
+        
+      msg.send(beer['name'])
