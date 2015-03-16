@@ -1,7 +1,7 @@
 {
   "name": "hubot-beer-me",
   "description": "Finds some sweet beers!",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Dave <dave@davenonne.com>",
   "license": "MIT",
   "keywords": [
