@@ -8,12 +8,12 @@ See [`src/hubot-beer-me.coffee`](src/hubot-beer-me.coffee) for full documentatio
 
 In hubot project repo, run:
 
-`npm install hubot-hubot-beer-me --save`
+`npm install hubot-beer-me --save`
 
-Then add **hubot-hubot-beer-me** to your `external-scripts.json`:
+Then add *hubot-beer-me** to your `external-scripts.json`:
 
 ```json
-["hubot-hubot-beer-me"]
+["hubot-beer-me"]
 ```
 
 ## Sample Interaction
