@@ -4,13 +4,17 @@ chai.use require 'sinon-chai'
 
 expect = chai.expect
 
-describe 'hubot-beer-me', ->
+describe 'beer-me', ->
   beforeEach ->
     @robot =
       respond: sinon.spy()
       hear: sinon.spy()
 
-    require('../src/hubot-beer-me')(@robot)
+    require('../src/beer-me')(@robot)
 
-  it 'registers a respond listener', ->
+  it 'registers a beer me respond listener', ->
     expect(@robot.respond).to.have.been.calledWith(/beer me (.*)/i)
+
+  it 'registers a brewery me respond listener', ->
+    expect(@robot.respond).to.have.been.calledWith(/brewery me (.*)/i)
+
